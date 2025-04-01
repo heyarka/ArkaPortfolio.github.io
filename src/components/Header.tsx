@@ -2,10 +2,11 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Download, Mail } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   return (
-    <header className="py-4 px-6 md:px-10 flex justify-between items-center bg-white border-b shadow-sm">
+    <header className="py-4 px-6 md:px-10 flex justify-between items-center bg-background border-b shadow-sm">
       <div className="font-bold text-xl text-primary">
         <a href="https://heyarka.github.io/">Arka Das</a>
       </div>
@@ -17,6 +18,7 @@ const Header = () => {
           <a href="https://heyarka.github.io/#contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</a>
         </nav>
         <div className="flex items-center space-x-2">
+          <ThemeToggle />
           <Button variant="outline" size="sm" className="hidden md:flex items-center gap-2">
             <Download className="h-4 w-4" />
             Resume
