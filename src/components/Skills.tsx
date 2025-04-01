@@ -1,11 +1,13 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Progress } from '@/components/ui/progress';
+import { Database, BarChart, ChartLine, ChartPie, Table } from 'lucide-react';
 
 interface Skill {
   name: string;
   value: number;
   description: string;
+  icon: React.ReactNode;
 }
 
 const Skills = () => {
@@ -14,34 +16,40 @@ const Skills = () => {
   
   const skills: Skill[] = [
     { 
-      name: "Data Analysis", 
+      name: "Excel", 
       value: 95, 
-      description: "Advanced statistical analysis, pivot tables, and data interpretation" 
+      description: "Advanced formulas, pivot tables, and interactive dashboards", 
+      icon: <Table className="h-6 w-6 text-primary/70" />
+    },
+    { 
+      name: "SQL", 
+      value: 90, 
+      description: "Database design, complex queries, and data extraction", 
+      icon: <Database className="h-6 w-6 text-primary/70" />
+    },
+    { 
+      name: "Power BI", 
+      value: 85, 
+      description: "Interactive reports, DAX formulas, and data modeling", 
+      icon: <BarChart className="h-6 w-6 text-primary/70" />
+    },
+    { 
+      name: "Tableau", 
+      value: 80, 
+      description: "Data visualization, dashboarding, and story-telling", 
+      icon: <ChartPie className="h-6 w-6 text-primary/70" />
+    },
+    { 
+      name: "Data Analysis", 
+      value: 90, 
+      description: "Statistical analysis, forecasting, and business intelligence", 
+      icon: <ChartLine className="h-6 w-6 text-primary/70" />
     },
     { 
       name: "Financial Modeling", 
-      value: 90, 
-      description: "Creating comprehensive financial projections and sensitivity analyses" 
-    },
-    { 
-      name: "Dashboard Creation", 
-      value: 95, 
-      description: "Building interactive and visually appealing dashboards" 
-    },
-    { 
-      name: "Data Visualization", 
       value: 85, 
-      description: "Creating charts, graphs, and visual representations of complex data" 
-    },
-    { 
-      name: "Automation", 
-      value: 80, 
-      description: "Macros, VBA, and automated workflows to improve efficiency" 
-    },
-    { 
-      name: "Forecasting", 
-      value: 85, 
-      description: "Trend analysis and predictive modeling for business outcomes" 
+      description: "Budgeting, forecasting, and scenario analysis", 
+      icon: <Table className="h-6 w-6 text-primary/70" />
     }
   ];
 
@@ -94,9 +102,9 @@ const Skills = () => {
   return (
     <section ref={sectionRef} className="py-20 px-6 md:px-10 bg-muted">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Excel Expertise</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Data Analysis Expertise</h2>
         <p className="text-muted-foreground text-center max-w-3xl mx-auto mb-16">
-          My advanced Excel skills span across various domains of data analysis and visualization.
+          My extensive skills span across various tools and technologies in the data analytics ecosystem.
         </p>
         
         <div className="grid gap-10">
@@ -107,10 +115,13 @@ const Skills = () => {
               className="scroll-animation"
             >
               <div className="flex flex-col md:flex-row md:items-center mb-2">
-                <h3 className="text-xl font-medium w-full md:w-1/3">{skill.name}</h3>
+                <div className="flex items-center w-full md:w-1/3">
+                  <div className="mr-3">{skill.icon}</div>
+                  <h3 className="text-xl font-medium">{skill.name}</h3>
+                </div>
                 <p className="text-muted-foreground w-full md:w-2/3">{skill.description}</p>
               </div>
-              <div className="h-8 bg-white rounded-md overflow-hidden relative">
+              <div className="h-8 bg-white dark:bg-gray-800 rounded-md overflow-hidden relative">
                 <Progress 
                   value={0} 
                   max={100}

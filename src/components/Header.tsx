@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header className="py-4 px-6 md:px-10 flex justify-between items-center bg-background border-b shadow-sm">
       <div className="font-bold text-xl text-primary">
-        <a href="https://heyarka.github.io/">Arka Das</a>
+        <a href="https://heyarka.github.io/">Arka Biswas</a>
       </div>
       <div className="flex items-center space-x-4">
         <nav className="hidden md:flex space-x-6 mr-6">
