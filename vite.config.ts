@@ -12,5 +12,5 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: '/', // 👈 For user site like ArkaPortfolio.github.io
+  base: '/', // ✅ Correct base for https://ArkaPortfolio.github.io
 }));
