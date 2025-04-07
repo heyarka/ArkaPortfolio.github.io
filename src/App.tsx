@@ -16,8 +16,11 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <div className="grain"></div>
-        <div className="wave-bg"></div>
+        <div className="fluid-bg"></div>
+        <div className="fluid-animation"></div>
+        <div className="blob blob-1"></div>
+        <div className="blob blob-2"></div>
+        <div className="blob blob-3"></div>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />

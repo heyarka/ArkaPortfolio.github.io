@@ -25,7 +25,7 @@ const Projects = () => {
       title: "Sales Dashboard",
       description: "Interactive dashboard for regional sales performance analysis with dynamic filtering.",
       image: "/placeholder.svg", 
-      icon: <BarChart3 className="h-10 w-10 text-black" />,
+      icon: <BarChart3 className="h-10 w-10 text-blue-600" />,
       tags: ["Dashboard", "Data Analysis", "Visualization"],
       link: "#"
     },
@@ -34,7 +34,7 @@ const Projects = () => {
       title: "Financial Model",
       description: "Comprehensive financial model for a 5-year business projection with sensitivity analysis.",
       image: "/placeholder.svg", 
-      icon: <FileSpreadsheet className="h-10 w-10 text-black" />,
+      icon: <FileSpreadsheet className="h-10 w-10 text-blue-600" />,
       tags: ["Financial Modeling", "Forecasting"],
       link: "#"
     },
@@ -43,7 +43,7 @@ const Projects = () => {
       title: "Inventory Management System",
       description: "Automated inventory tracking system with reorder alerts and usage forecasting.",
       image: "/placeholder.svg", 
-      icon: <Table className="h-10 w-10 text-black" />,
+      icon: <Table className="h-10 w-10 text-blue-600" />,
       tags: ["Automation", "Inventory"],
       link: "#"
     },
@@ -52,7 +52,7 @@ const Projects = () => {
       title: "Marketing ROI Analyzer",
       description: "Tool to measure and visualize the ROI of various marketing channels and campaigns.",
       image: "/placeholder.svg", 
-      icon: <PieChart className="h-10 w-10 text-black" />,
+      icon: <PieChart className="h-10 w-10 text-blue-600" />,
       tags: ["ROI Analysis", "Visualization", "Marketing"],
       link: "#"
     },
@@ -61,7 +61,7 @@ const Projects = () => {
       title: "HR Performance Tracker",
       description: "Employee performance analytics dashboard with KPI tracking and performance reviews.",
       image: "/placeholder.svg", 
-      icon: <BarChart3 className="h-10 w-10 text-black" />,
+      icon: <BarChart3 className="h-10 w-10 text-blue-600" />,
       tags: ["HR Analytics", "Dashboard", "KPI Tracking"],
       link: "#"
     },
@@ -70,7 +70,7 @@ const Projects = () => {
       title: "Project Budget Tracker",
       description: "Project management budget tracking tool with variance analysis and projections.",
       image: "/placeholder.svg", 
-      icon: <FileSpreadsheet className="h-10 w-10 text-black" />,
+      icon: <FileSpreadsheet className="h-10 w-10 text-blue-600" />,
       tags: ["Project Management", "Budgeting", "Forecasting"],
       link: "#"
     }
@@ -111,20 +111,20 @@ const Projects = () => {
   return (
     <section id="projects" className="py-24 px-6 md:px-16 relative">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-serif font-medium mb-4 text-left">Excel Projects</h2>
-        <p className="text-xl text-gray-600 max-w-3xl mb-12 text-left">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4">Excel Projects</h2>
+        <p className="text-xl text-gray-600 max-w-3xl mb-12">
           Explore my collection of Excel projects showcasing data analysis, visualization, and automation solutions.
         </p>
         
-        <div className="flex flex-wrap gap-3 mb-12 justify-start">
+        <div className="flex flex-wrap gap-3 mb-12">
           {filters.map((filter) => (
             <Badge 
               key={filter}
               variant={activeFilter === filter ? "default" : "outline"}
               className={`cursor-pointer text-sm py-1.5 px-4 rounded-full ${
                 activeFilter === filter 
-                  ? 'bg-black text-white hover:bg-gray-800' 
-                  : 'border-gray-300 text-gray-600 hover:bg-gray-100'
+                  ? 'bg-blue-600 hover:bg-blue-700' 
+                  : 'border-blue-200 text-blue-600 hover:bg-blue-50'
               }`}
               onClick={() => setActiveFilter(filter)}
             >
@@ -140,19 +140,19 @@ const Projects = () => {
               ref={el => projectRefs.current[index] = el}
               className="scroll-animation"
             >
-              <Card className="project-card h-full flex flex-col overflow-hidden border-0 rounded-xl">
+              <Card className="project-card glass-effect hover-card h-full">
                 <CardContent className="p-8 flex flex-col h-full">
                   <div className="mb-6">{project.icon}</div>
-                  <h3 className="text-2xl font-serif mb-2 text-left">{project.title}</h3>
-                  <p className="text-gray-600 mb-6 text-left flex-grow">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-6 justify-start">
+                  <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+                  <p className="text-gray-600 mb-6 flex-grow">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {project.tags.map(tag => (
-                      <Badge key={tag} variant="secondary" className="text-xs bg-gray-100 text-gray-700 hover:bg-gray-200">
+                      <Badge key={tag} variant="secondary" className="text-xs">
                         {tag}
                       </Badge>
                     ))}
                   </div>
-                  <Button variant="outline" className="w-full justify-between group rounded-full border-black hover:bg-black hover:text-white transition-colors" asChild>
+                  <Button variant="outline" className="w-full justify-between group" asChild>
                     <a href={project.link}>
                       View Project
                       <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />

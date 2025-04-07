@@ -42,36 +42,28 @@
   color: #888;
 }
 
-/* Add glass effect to cards and containers */
+/* Glass effect for cards and containers */
 .glass-effect {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Oaksun-inspired styles */
-.oaksun-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+/* Button styling */
+.primary-button {
+  @apply rounded-lg px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-medium hover:opacity-90 transition-all;
 }
 
-.oaksun-heading {
-  @apply font-serif;
-  font-weight: 500;
+.outline-button {
+  @apply rounded-lg px-6 py-3 border border-blue-500 text-blue-600 font-medium hover:bg-blue-50 transition-all;
 }
 
-.oaksun-button {
-  @apply rounded-full px-6 py-3 border border-black text-sm uppercase tracking-wider transition-all;
-  background: transparent;
+/* Card effects */
+.hover-card {
+  @apply transition-all duration-300;
 }
 
-.oaksun-button:hover {
-  @apply bg-black text-white;
-}
-
-.oaksun-large-text {
-  font-size: clamp(2.5rem, 8vw, 7rem);
-  line-height: 1.1;
-  font-weight: 500;
+.hover-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 30px -15px rgba(0, 0, 0, 0.1);
 }

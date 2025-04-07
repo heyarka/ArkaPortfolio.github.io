@@ -10,14 +10,14 @@ const Header = () => {
   const isMainPage = location.pathname === "/";
 
   return (
-    <header className="py-6 px-6 md:px-16 flex justify-between items-center fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
+    <header className="py-6 px-6 md:px-16 flex justify-between items-center fixed top-0 left-0 right-0 z-50 glass-effect">
       <div className="font-serif text-xl">
         <a href="https://heyarka.github.io/" className="hover:opacity-70 transition-opacity">Arka Biswas</a>
       </div>
       <div className="flex items-center space-x-8">
         <nav className="hidden md:flex space-x-8">
           {!isMainPage && (
-            <Button variant="ghost" size="sm" className="hover:bg-transparent hover:text-black" asChild>
+            <Button variant="ghost" size="sm" className="hover:bg-transparent hover:text-primary" asChild>
               <Link to="/">
                 <Home className="h-4 w-4 mr-2" />
                 Return to Main Page
@@ -35,11 +35,11 @@ const Header = () => {
         </nav>
         <div className="flex items-center space-x-4">
           <ThemeToggle />
-          <Button variant="outline" size="sm" className="hidden md:flex items-center gap-2 rounded-full border-black hover:bg-black hover:text-white transition-colors">
+          <Button variant="outline" size="sm" className="hidden md:flex items-center gap-2">
             <Download className="h-4 w-4" />
             Resume
           </Button>
-          <Button size="sm" className="flex items-center gap-2 rounded-full bg-black text-white hover:bg-gray-800 transition-colors">
+          <Button size="sm" className="flex items-center gap-2">
             <Mail className="h-4 w-4" />
             <span className="hidden md:inline">Contact</span>
           </Button>
