@@ -10,7 +10,7 @@ const Header = () => {
   const isMainPage = location.pathname === "/";
 
   return (
-    <header className="py-4 px-6 md:px-10 flex justify-between items-center bg-background border-b shadow-sm">
+    <header className="py-4 px-6 md:px-10 flex justify-between items-center bg-background/80 backdrop-blur-md border-b shadow-sm sticky top-0 z-50">
       <div className="font-bold text-xl text-primary">
         <a href="https://heyarka.github.io/">Arka Biswas</a>
       </div>
