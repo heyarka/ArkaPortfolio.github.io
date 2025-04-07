@@ -1,9 +1,9 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { FileSpreadsheet, BarChart3, PieChart, Table, ExternalLink } from 'lucide-react';
+import { FileSpreadsheet, BarChart3, PieChart, Table, ArrowUpRight } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -25,7 +25,7 @@ const Projects = () => {
       title: "Sales Dashboard",
       description: "Interactive dashboard for regional sales performance analysis with dynamic filtering.",
       image: "/placeholder.svg", 
-      icon: <BarChart3 className="h-10 w-10 text-secondary" />,
+      icon: <BarChart3 className="h-10 w-10 text-black" />,
       tags: ["Dashboard", "Data Analysis", "Visualization"],
       link: "#"
     },
@@ -34,7 +34,7 @@ const Projects = () => {
       title: "Financial Model",
       description: "Comprehensive financial model for a 5-year business projection with sensitivity analysis.",
       image: "/placeholder.svg", 
-      icon: <FileSpreadsheet className="h-10 w-10 text-secondary" />,
+      icon: <FileSpreadsheet className="h-10 w-10 text-black" />,
       tags: ["Financial Modeling", "Forecasting"],
       link: "#"
     },
@@ -43,7 +43,7 @@ const Projects = () => {
       title: "Inventory Management System",
       description: "Automated inventory tracking system with reorder alerts and usage forecasting.",
       image: "/placeholder.svg", 
-      icon: <Table className="h-10 w-10 text-secondary" />,
+      icon: <Table className="h-10 w-10 text-black" />,
       tags: ["Automation", "Inventory"],
       link: "#"
     },
@@ -52,7 +52,7 @@ const Projects = () => {
       title: "Marketing ROI Analyzer",
       description: "Tool to measure and visualize the ROI of various marketing channels and campaigns.",
       image: "/placeholder.svg", 
-      icon: <PieChart className="h-10 w-10 text-secondary" />,
+      icon: <PieChart className="h-10 w-10 text-black" />,
       tags: ["ROI Analysis", "Visualization", "Marketing"],
       link: "#"
     },
@@ -61,7 +61,7 @@ const Projects = () => {
       title: "HR Performance Tracker",
       description: "Employee performance analytics dashboard with KPI tracking and performance reviews.",
       image: "/placeholder.svg", 
-      icon: <BarChart3 className="h-10 w-10 text-secondary" />,
+      icon: <BarChart3 className="h-10 w-10 text-black" />,
       tags: ["HR Analytics", "Dashboard", "KPI Tracking"],
       link: "#"
     },
@@ -70,7 +70,7 @@ const Projects = () => {
       title: "Project Budget Tracker",
       description: "Project management budget tracking tool with variance analysis and projections.",
       image: "/placeholder.svg", 
-      icon: <FileSpreadsheet className="h-10 w-10 text-secondary" />,
+      icon: <FileSpreadsheet className="h-10 w-10 text-black" />,
       tags: ["Project Management", "Budgeting", "Forecasting"],
       link: "#"
     }
@@ -109,19 +109,23 @@ const Projects = () => {
   }, [filteredProjects]);
 
   return (
-    <section id="projects" className="py-20 px-6 md:px-10">
+    <section id="projects" className="py-24 px-6 md:px-16 relative">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Excel Projects</h2>
-        <p className="text-muted-foreground text-center max-w-3xl mx-auto mb-12">
-          Explore my collection of Excel projects showcasing data analysis, visualization, and automation solutions for real-world business problems.
+        <h2 className="text-4xl md:text-5xl font-serif font-medium mb-4 text-left">Excel Projects</h2>
+        <p className="text-xl text-gray-600 max-w-3xl mb-12 text-left">
+          Explore my collection of Excel projects showcasing data analysis, visualization, and automation solutions.
         </p>
         
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
+        <div className="flex flex-wrap gap-3 mb-12 justify-start">
           {filters.map((filter) => (
             <Badge 
               key={filter}
               variant={activeFilter === filter ? "default" : "outline"}
-              className={`cursor-pointer text-sm py-2 px-4 ${activeFilter === filter ? 'bg-primary' : ''}`}
+              className={`cursor-pointer text-sm py-1.5 px-4 rounded-full ${
+                activeFilter === filter 
+                  ? 'bg-black text-white hover:bg-gray-800' 
+                  : 'border-gray-300 text-gray-600 hover:bg-gray-100'
+              }`}
               onClick={() => setActiveFilter(filter)}
             >
               {filter}
@@ -129,36 +133,32 @@ const Projects = () => {
           ))}
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
             <div 
               key={project.id} 
               ref={el => projectRefs.current[index] = el}
               className="scroll-animation"
             >
-              <Card className="project-card h-full flex flex-col overflow-hidden border-2 border-muted hover:border-primary/20">
-                <CardHeader className="pb-0 pt-6">
-                  <div className="mb-4">{project.icon}</div>
-                  <CardTitle className="text-xl">{project.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="py-4 flex-grow">
-                  <p className="text-muted-foreground">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mt-4">
+              <Card className="project-card h-full flex flex-col overflow-hidden border-0 rounded-xl">
+                <CardContent className="p-8 flex flex-col h-full">
+                  <div className="mb-6">{project.icon}</div>
+                  <h3 className="text-2xl font-serif mb-2 text-left">{project.title}</h3>
+                  <p className="text-gray-600 mb-6 text-left flex-grow">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-6 justify-start">
                     {project.tags.map(tag => (
-                      <Badge key={tag} variant="secondary" className="text-xs">
+                      <Badge key={tag} variant="secondary" className="text-xs bg-gray-100 text-gray-700 hover:bg-gray-200">
                         {tag}
                       </Badge>
                     ))}
                   </div>
-                </CardContent>
-                <CardFooter className="pt-0 pb-6">
-                  <Button variant="outline" className="w-full group" asChild>
+                  <Button variant="outline" className="w-full justify-between group rounded-full border-black hover:bg-black hover:text-white transition-colors" asChild>
                     <a href={project.link}>
                       View Project
-                      <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                     </a>
                   </Button>
-                </CardFooter>
+                </CardContent>
               </Card>
             </div>
           ))}

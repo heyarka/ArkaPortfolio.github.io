@@ -2,7 +2,7 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
 }
 
@@ -47,4 +47,31 @@
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Oaksun-inspired styles */
+.oaksun-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.oaksun-heading {
+  @apply font-serif;
+  font-weight: 500;
+}
+
+.oaksun-button {
+  @apply rounded-full px-6 py-3 border border-black text-sm uppercase tracking-wider transition-all;
+  background: transparent;
+}
+
+.oaksun-button:hover {
+  @apply bg-black text-white;
+}
+
+.oaksun-large-text {
+  font-size: clamp(2.5rem, 8vw, 7rem);
+  line-height: 1.1;
+  font-weight: 500;
 }
