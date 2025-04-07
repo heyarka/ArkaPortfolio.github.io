@@ -24,7 +24,7 @@ const HeroSection = () => {
         <Button onClick={scrollToProjects} className="primary-button" size="lg">
           View My Projects
         </Button>
-        <Button variant="outline" size="lg" className="outline-button text-teal-400">
+        <Button variant="outline" size="lg" className="outline-button bg-blue-700 hover:bg-blue-600 text-zinc-100">
           About My Process
         </Button>
       </div>
