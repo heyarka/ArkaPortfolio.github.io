@@ -7,6 +7,10 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    allowedHosts: [
+      '2b22b371-5e48-433a-bd69-e43357682e4c.lovableproject.com',
+      'heyarka.github.io'
+    ],
   },
   plugins: [
     react(),
