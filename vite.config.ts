@@ -22,5 +22,5 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: '/ArkaPortfolio.github.io/', // Keep GitHub Pages repository name path
+  base: './', // Changed from '/ArkaPortfolio.github.io/' to './' for relative paths
 }));
