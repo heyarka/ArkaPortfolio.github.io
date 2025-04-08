@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <header className="py-6 px-6 md:px-16 flex justify-between items-center fixed top-0 left-0 right-0 z-50 glass-effect">
       <div className="font-serif text-xl">
-        <a href="https://heyarka.github.io/" className="hover:opacity-70 transition-opacity">Arka Biswas</a>
+        <Link to="/" className="hover:opacity-70 transition-opacity">Arka Biswas</Link>
       </div>
       <div className="flex items-center space-x-8">
         <nav className="hidden md:flex space-x-8">
@@ -26,10 +26,10 @@ const Header = () => {
           )}
           {isMainPage && (
             <>
-              <a href="https://heyarka.github.io/" className="hover:opacity-70 transition-opacity">Home</a>
+              <Link to="/" className="hover:opacity-70 transition-opacity">Home</Link>
               <a href="#projects" className="hover:opacity-70 transition-opacity">Projects</a>
               <a href="#" className="hover:opacity-70 transition-opacity">Excel Portfolio</a>
-              <a href="https://heyarka.github.io/#contact" className="hover:opacity-70 transition-opacity">Contact</a>
+              <a href="#contact" className="hover:opacity-70 transition-opacity">Contact</a>
             </>
           )}
         </nav>

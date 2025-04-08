@@ -22,5 +22,5 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: './', // Changed from '/ArkaPortfolio.github.io/' to './' for relative paths
+  base: './', // Using relative paths for all assets
 }));
