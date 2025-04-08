@@ -1,3 +1,4 @@
+
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
@@ -15,5 +16,5 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: '/', // ✅ Correct base for https://ArkaPortfolio.github.io
+  base: '/ArkaPortfolio.github.io/', // Updated base path to match GitHub Pages repository name
 }));

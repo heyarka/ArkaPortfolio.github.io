@@ -21,7 +21,7 @@ const App = () => (
         <div className="blob blob-1"></div>
         <div className="blob blob-2"></div>
         <div className="blob blob-3"></div>
-        <BrowserRouter>
+        <BrowserRouter basename="/ArkaPortfolio.github.io">
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="*" element={<NotFound />} />
